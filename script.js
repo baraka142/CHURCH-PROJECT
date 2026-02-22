@@ -41,7 +41,7 @@ function prevSlide() {
 function validateForm(form) {
     let valid = true;
     const inputs = form.querySelectorAll('input[required], textarea[required]');
-    
+
     inputs.forEach(input => {
         if (!input.value.trim()) {
             valid = false;
@@ -50,7 +50,7 @@ function validateForm(form) {
             input.style.borderColor = '';
         }
     });
-    
+
     return valid;
 }
 
@@ -69,6 +69,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Giving Page Functionality
+
+// Copy M-Pesa Till details to clipboard
+function copyTillDetails() {
+    const tillDetails = `Till Number: 094446\nName: Grace Gospel Church Webuye`;
+    copyToClipboard(tillDetails, "Till Number details copied to clipboard!");
+}
 
 // Copy M-Pesa details to clipboard
 function copyMpesaDetails() {
@@ -96,11 +102,11 @@ function copyToClipboard(text, message) {
 function showToast(message) {
     const toast = document.getElementById('toast');
     const toastMessage = document.getElementById('toast-message');
-    
+
     if (toast && toastMessage) {
         toastMessage.textContent = message;
         toast.classList.add('show');
-        
+
         setTimeout(() => {
             toast.classList.remove('show');
         }, 3000);
@@ -108,23 +114,23 @@ function showToast(message) {
 }
 
 // FAQ accordion functionality
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const faqQuestions = document.querySelectorAll('.faq-question');
-    
+
     faqQuestions.forEach(question => {
         question.addEventListener('click', () => {
             const answer = question.nextElementSibling;
             const isActive = answer.classList.contains('active');
-            
+
             // Close all answers
             document.querySelectorAll('.faq-answer').forEach(ans => {
                 ans.classList.remove('active');
             });
-            
+
             document.querySelectorAll('.faq-question').forEach(q => {
                 q.classList.remove('active');
             });
-            
+
             // Open clicked answer if it wasn't already active
             if (!isActive) {
                 question.classList.add('active');
@@ -132,13 +138,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
+
     // Form submission
     const givingForm = document.getElementById('givingForm');
     if (givingForm) {
-        givingForm.addEventListener('submit', function(e) {
+        givingForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             if (validateForm(this)) {
                 // Simulate form submission
                 showToast("Thank you for your donation information! We'll be in touch soon.");
@@ -150,9 +156,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Contact form submission
     const generalForm = document.getElementById('generalForm');
     if (generalForm) {
-        generalForm.addEventListener('submit', function(e) {
+        generalForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             if (validateForm(this)) {
                 // Simulate form submission
                 showToast("Your message has been sent successfully! We'll be in touch soon.");
@@ -160,13 +166,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
+
     // Prayer request form submission
     const prayerForm = document.getElementById('prayerForm');
     if (prayerForm) {
-        prayerForm.addEventListener('submit', function(e) {
+        prayerForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             if (validateForm(this)) {
                 // Simulate form submission
                 showToast("Your prayer request has been submitted. Our prayer team will be praying for you.");
@@ -174,11 +180,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
+
     // Phone number formatting
     const phoneInputs = document.querySelectorAll('input[type="tel"]');
     phoneInputs.forEach(input => {
-        input.addEventListener('input', function(e) {
+        input.addEventListener('input', function (e) {
             // Format phone number as user types
             const value = e.target.value.replace(/\D/g, '');
             if (value.length <= 3) {
@@ -199,27 +205,27 @@ function isValidEmail(email) {
 }
 
 // Sermon filtering functionality
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const speakerFilter = document.querySelector('.speaker-filter');
     const sermonCards = document.querySelectorAll('.sermon-card');
-    
+
     // Filter by type
     if (filterButtons.length > 0) {
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const filter = button.getAttribute('data-filter');
-                
+
                 // Update active button
                 filterButtons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
-                
+
                 // Filter sermons
                 filterSermons(filter, speakerFilter.value);
             });
         });
     }
-    
+
     // Filter by speaker
     if (speakerFilter) {
         speakerFilter.addEventListener('change', () => {
@@ -227,15 +233,15 @@ document.addEventListener('DOMContentLoaded', function() {
             filterSermons(activeFilter, speakerFilter.value);
         });
     }
-    
+
     function filterSermons(typeFilter, speakerFilter) {
         sermonCards.forEach(card => {
             const cardType = card.getAttribute('data-type');
             const cardSpeaker = card.getAttribute('data-speaker');
-            
+
             const typeMatch = typeFilter === 'all' || cardType === typeFilter;
             const speakerMatch = speakerFilter === 'all' || cardSpeaker === speakerFilter;
-            
+
             if (typeMatch && speakerMatch) {
                 card.style.display = 'block';
             } else {
@@ -243,7 +249,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
+
     // Load more sermons button
     const loadMoreBtn = document.querySelector('.load-more-btn');
     if (loadMoreBtn) {

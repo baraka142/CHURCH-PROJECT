@@ -1,12 +1,17 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giving - Grace Gospel Church Webuye</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">`n    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">`n
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
@@ -40,100 +45,68 @@
         </div>
     </section>
 
-    <!-- Giving Intro -->
-    <section class="giving-intro">
-        <div class="container">
-            <div class="giving-content">
-                <div class="giving-text">
-                    <h2>Why We Give</h2>
-                    <p>Your generous giving enables us to continue our mission of preaching Christ Jesus unto national transformation. Through your support, we can maintain our facilities, support our pastors, run community programs, and spread the Gospel throughout Webuye and beyond.</p>
-                    <blockquote>
-                        "Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver."
-                        <cite>2 Corinthians 9:7</cite>
-                    </blockquote>
-                </div>
-                <div class="giving-image">
-                    <img src="https://placehold.co/400x300/2c3e50/ffffff" alt="Giving Illustration">
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Giving Methods -->
     <section class="giving-methods">
         <div class="container">
-            <h2>Ways to Give</h2>
-            <div class="methods-grid">
-                <!-- M-Pesa -->
-                <div class="method-card">
-                    <div class="method-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>M-Pesa</h3>
-                    <p>Give quickly and securely using M-Pesa mobile money</p>
-                    <div class="method-details">
-                        <div class="detail-item">
-                            <span class="detail-label">Paybill:</span>
-                            <span class="detail-value">247247</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Account:</span>
-                            <span class="detail-value">094446</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Account Name:</span>
-                            <span class="detail-value">Elshadai Harvest Ministry - Webuye</span>
-                        </div>
-                    </div>
-                    <button class="method-btn" onclick="copyMpesaDetails()">Copy Details</button>
-                </div>
+            <div class="methods-header">
+                <h2>Tithes & Offerings</h2>
+                <div class="header-line"></div>
+            </div>
 
-                <!-- Bank Transfer -->
-                <div class="method-card">
-                    <div class="method-icon">
-                        <i class="fas fa-university"></i>
+            <div class="premium-giving-card">
+                <div class="card-glow"></div>
+                <div class="card-content">
+                    <div class="giving-icon">
+                        <i class="fas fa-hand-holding-dollar"></i>
                     </div>
+
+                    <div class="giving-scripture">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p>"Each of you should give what you have decided in your heart to give, not reluctantly or
+                            under compulsion, for God loves a cheerful giver."</p>
+                        <cite>- 2 Corinthians 9:7</cite>
+                    </div>
+
+                    <div class="m-pesa-details">
+                        <img src="images/IMG-20251011-WA0001.jpg" alt="M-Pesa Logo" class="mpesa-logo"
+                            onerror="this.style.display='none'">
+                        <h3>M-Pesa Buy Goods</h4>
+                            <div class="till-box">
+                                <span class="till-label">Till Number</span>
+                                <span class="till-number" id="tillNumber">094446</span>
+                            </div>
+                            <p class="account-name">Grace Gospel Church Webuye</p>
+                    </div>
+
+                    <button class="gold-btn animate-btn" onclick="copyTillDetails()">
+                        <i class="far fa-copy"></i>
+                        Copy Till Number
+                    </button>
+                </div>
+            </div>
+
+            <div class="other-methods">
+                <div class="method-card">
+                    <i class="fas fa-university method-icon"></i>
                     <h3>Bank Transfer</h3>
-                    <p>Transfer directly to our bank account</p>
                     <div class="method-details">
-                        <div class="detail-item">
-                            <span class="detail-label">Bank Name:</span>
-                            <span class="detail-value">Equity Bank</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Account Name:</span>
-                            <span class="detail-value">Elshadai Harvest Ministry â€“ Webuye</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Account No:</span>
-                            <span class="detail-value">0480284094446</span>
-                        </div>
+                        <p><strong>Bank:</strong> Equity Bank</p>
+                        <p><strong>Account:</strong> 0480284094446</p>
+                        <p><strong>Name:</strong> Elshadai Harvest Ministry</p>
                     </div>
-                    <button class="method-btn" onclick="copyBankDetails()">Copy Details</button>
+                    <button class="outline-btn" onclick="copyBankDetails()">Copy Note</button>
                 </div>
 
-                <!-- In Person -->
                 <div class="method-card">
-                    <div class="method-icon">
-                        <i class="fas fa-hand-holding-usd"></i>
-                    </div>
+                    <i class="fas fa-church method-icon"></i>
                     <h3>In Person</h3>
-                    <p>Give during our services or visit the church office</p>
                     <div class="method-details">
-                        <div class="detail-item">
-                            <span class="detail-label">Cash:</span>
-                            <span class="detail-value">Accepted during services</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Cheques:</span>
-                            <span class="detail-value">Payable to Elshadai Harvest Ministry</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Office Hours:</span>
-                            <span class="detail-value">Mon-Fri, 9AM-4PM</span>
-                        </div>
+                        <p>Give during our services or visit the church office throughout the week.</p>
+                        <br>
+                        <p><strong>Mon-Fri:</strong> 9AM - 4PM</p>
                     </div>
-                    <a href="contact.html" class="method-btn">Get Directions</a>
                 </div>
             </div>
         </div>
@@ -202,7 +175,9 @@
                         <i class="fas fa-chevron-down"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>Your donations support various church ministries including pastoral care, facility maintenance, community outreach programs, youth ministry, and mission work. We are committed to financial transparency and accountability.</p>
+                        <p>Your donations support various church ministries including pastoral care, facility
+                            maintenance, community outreach programs, youth ministry, and mission work. We are committed
+                            to financial transparency and accountability.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -211,7 +186,8 @@
                         <i class="fas fa-chevron-down"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>Yes, we provide receipts for all donations. Please ensure you provide your contact information when giving, or use the form above to notify us of your donation.</p>
+                        <p>Yes, we provide receipts for all donations. Please ensure you provide your contact
+                            information when giving, or use the form above to notify us of your donation.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -220,7 +196,8 @@
                         <i class="fas fa-chevron-down"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>Yes, all electronic giving methods (M-Pesa, bank transfer) are secure and encrypted. We do not store your financial information on our systems.</p>
+                        <p>Yes, all electronic giving methods (M-Pesa, bank transfer) are secure and encrypted. We do
+                            not store your financial information on our systems.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -229,7 +206,8 @@
                         <i class="fas fa-chevron-down"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>Currently, we don't have an automated recurring donation system, but you can schedule regular M-Pesa payments through your mobile money app using our Paybill number.</p>
+                        <p>Currently, we don't have an automated recurring donation system, but you can schedule regular
+                            M-Pesa payments through your mobile money app using our Paybill number.</p>
                     </div>
                 </div>
             </div>
@@ -274,5 +252,5 @@
     </div>
     <script src="script.js"></script>
 </body>
-</html>
 
+</html>
